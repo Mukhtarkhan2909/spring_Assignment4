@@ -1,15 +1,12 @@
 package com.example.Assignment4.service;
-
-import com.example.Assignment4.dao.EmployeeRepository;
+import com.example.Assignment4.repository.EmployeeRepository;
 import com.example.Assignment4.entity.Employee;
 import com.example.Assignment4.entity.EmployeeType;
 import com.example.Assignment4.event.SalaryChangeEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -17,10 +14,6 @@ public class SalaryCalculatorService  implements SalaryCalculatorServiceInterfac
     @Autowired
     private EmployeeRepository employeeRepository;
     private ApplicationEventPublisher eventPublisher;
-    @Override
-    public void create(Employee employee) {
-        employeeRepository.save(employee);
-    }
 
     @Override
     public List<Employee> findAll() {
@@ -35,11 +28,6 @@ public class SalaryCalculatorService  implements SalaryCalculatorServiceInterfac
     @Override
     public Employee findById(long id) {
         return employeeRepository.findEmployeesById(id);
-    }
-
-    @Override
-    public void save(Employee employee) {
-        employeeRepository.save(employee);
     }
 
     @Override

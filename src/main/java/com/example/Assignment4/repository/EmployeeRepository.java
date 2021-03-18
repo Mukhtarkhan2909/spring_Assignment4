@@ -1,10 +1,8 @@
-package com.example.Assignment4.dao;
-
+package com.example.Assignment4.repository;
 import com.example.Assignment4.entity.Employee;
 import com.example.Assignment4.entity.EmployeeType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
 @Repository
